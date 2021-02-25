@@ -111,18 +111,46 @@ alias zork="snap run zork"
 alias anime="py ~/Documents/global/web/anime/animekisa.py"
 yt(){
 	echo "saving to ~/Videos/yt/videos"
-	nohup youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1 &
-	exit
+	if [ -z "$2" ];then
+		#if argument 2 is empty
+		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/%(title)s.%(ext)s" $1
+	elif [ $2 == "-q" ]; then
+		cd "/home/l/Documents/global/nohup"
+		nohup youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1 &
+		sleep 1
+		exit
+	else:
+		youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1
+	fi
 }
+
+test(){
+	cd "/home/l/Music"
+	ls
+	pwd
+	cd "/"
+	ls
+	pwd
+}
+
 yt-mp3(){
 	echo "saving to ~/Music/yt"
-	if [ $2 == "exit" ]; then
-		echo "work"
-		nohup youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/%(title)s.%(ext)s" $1 &
-		sleep 2
+	if [ ! -z "$3" ];then
+		if [ ! -d "/home/l/Music/yt/$3" ]; then
+			cd "/home/l/Music/yt"
+			mkdir "$3"
+		fi
+	fi
+	if [ $2 == "-o" ];then
+		#if argument 2 is empty
+		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/$3/%(title)s.%(ext)s" $1
+	elif [ $2 == "-q" ]; then
+		cd "/home/l/Documents/global/nohup"
+		nohup youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/$3/%(title)s.%(ext)s" $1 &
+		sleep 1
 		exit
 	else
-		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/%(title)s.%(ext)s" $1
+		echo "Missing argument"
 	fi
 }
 #list video files
