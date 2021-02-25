@@ -115,8 +115,8 @@ yt(){
 		#if argument 2 is empty
 		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/%(title)s.%(ext)s" $1
 	elif [ $2 == "-q" ]; then
-		cd "/home/l/Documents/global/nohup"
-		nohup youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1 &
+		#cd "/home/l/Documents/global/nohup"
+		nohup youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1 &> /tmp/nohup.out
 		sleep 1
 		exit
 	else:
@@ -145,8 +145,8 @@ yt-mp3(){
 		#if argument 2 is empty
 		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/$3/%(title)s.%(ext)s" $1
 	elif [ $2 == "-q" ]; then
-		cd "/home/l/Documents/global/nohup"
-		nohup youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/$3/%(title)s.%(ext)s" $1 &
+		#cd "/home/l/Documents/global/nohup"
+		nohup youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/$3/%(title)s.%(ext)s" $1 &> /tmp/nohup.out
 		sleep 1
 		exit
 	else
@@ -158,8 +158,9 @@ vidl() {
 	echo "Historic: $(<~/Videos/historic.txt)"
 	line=$(ls -1q | wc -l)
 	vid=$(ls | dmenu -p $line)
-	nohup mpv --sub=no -fs $vid &
+	nohup mpv --sub=no -fs $vid &> /tmp/nohup.out
 	echo "$vid" > ~/Videos/historic.txt
+	rm nohup.out
 }
 #record screen with sound
 recs() {
