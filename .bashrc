@@ -107,6 +107,7 @@ alias ptt="pdftotext -layout"
 alias cdp="py ~/Documents/global/github/repos/change-directory-plus-main/cdp/cdp.py"
 alias exe="chmod +x"
 alias zork="snap run zork"
+alias pdt="py ~/Documents/global/py/pdt.py -t"
 # file links
 alias anime="py ~/Documents/global/web/anime/animekisa.py"
 yt(){
@@ -119,20 +120,12 @@ yt(){
 		nohup youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1 &> /tmp/nohup.out
 		sleep 1
 		exit
-	else:
+	elif [ $2 == "-sub" ]; then
+		youtube-dl --restrict-filenames --write-sub --sub-lang en --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1
+	else
 		youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1
 	fi
 }
-
-test(){
-	cd "/home/l/Music"
-	ls
-	pwd
-	cd "/"
-	ls
-	pwd
-}
-
 yt-mp3(){
 	echo "saving to ~/Music/yt"
 	if [ ! -z "$3" ];then
@@ -158,9 +151,12 @@ vidl() {
 	echo "Historic: $(<~/Videos/historic.txt)"
 	line=$(ls -1q | wc -l)
 	vid=$(ls | dmenu -p $line)
-	nohup mpv --sub=no -fs $vid &> /tmp/nohup.out
-	echo "$vid" > ~/Videos/historic.txt
-	rm nohup.out
+	if [ $1 == "-sub" ];then
+		nohup mpv -fs $vid &> /tmp/nohup.out
+	else
+		nohup mpv --sub=no -fs $vid &> /tmp/nohup.out
+		echo "$vid" > ~/Videos/historic.txt
+	fi
 }
 #record screen with sound
 recs() {
