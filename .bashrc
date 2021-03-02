@@ -110,36 +110,40 @@ alias zork="snap run zork"
 alias pdt="py ~/Documents/global/py/pdt.py -t"
 # file links
 alias anime="py ~/Documents/global/web/anime/animekisa.py"
-yt(){
-	echo "saving to ~/Videos/yt/videos"
+#
+
+alias yt="youtube-dl --restrict-filenames --o '~/Videos/youtube/%(uploader)s-%(title)s'"
+ytd(){
+	#video_folder="/Videos/youtube"
+	echo "saving to "$video_folder
 	if [ -z "$2" ];then
 		#if argument 2 is empty
-		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/%(title)s.%(ext)s" $1
+		youtube-dl --restrict-filenames --output '~/Videos/youtube/%(uploader)s-%(title)s' $1
 	elif [ $2 == "-q" ]; then
 		#cd "/home/l/Documents/global/nohup"
-		nohup youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1 &> /tmp/nohup.out
+		nohup youtube-dl --restrict-filenames --output '~/Videos/youtube/%(uploader)s-%(title)s' $1 &> /tmp/nohup.out
 		sleep 1
 		exit
 	elif [ $2 == "-sub" ]; then
-		youtube-dl --restrict-filenames --write-sub --sub-lang en --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1
+		youtube-dl --restrict-filenames --write-sub --sub-lang en --output '~/Videos/youtube/%(uploader)s-%(title)s' $1
 	else
-		youtube-dl --restrict-filenames --output '~/Videos/yt/videos/%(uploader)s-%(title)s' $1
+		youtube-dl --restrict-filenames --output '~/Videos/youtube/%(uploader)s-%(title)s' $1
 	fi
 }
 yt-mp3(){
-	echo "saving to ~/Music/yt"
+	echo "saving to ~/Music/yt-mp3"
 	if [ ! -z "$3" ];then
-		if [ ! -d "/home/l/Music/yt/$3" ]; then
+		if [ ! -d "~/Music/yt-mp3/$3" ]; then
 			cd "/home/l/Music/yt"
 			mkdir "$3"
 		fi
 	fi
 	if [ $2 == "-o" ];then
 		#if argument 2 is empty
-		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/$3/%(title)s.%(ext)s" $1
+		youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt-mp3/$3/%(title)s.%(ext)s" $1
 	elif [ $2 == "-q" ]; then
 		#cd "/home/l/Documents/global/nohup"
-		nohup youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt/$3/%(title)s.%(ext)s" $1 &> /tmp/nohup.out
+		nohup youtube-dl --restrict-filenames --extract-audio --audio-format 'mp3' --output "~/Music/yt-mp3/$3/%(title)s.%(ext)s" $1 &> /tmp/nohup.out
 		sleep 1
 		exit
 	else
