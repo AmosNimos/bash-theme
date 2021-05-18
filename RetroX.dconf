@@ -1,0 +1,13 @@
+[/]
+background-color='rgb(40,15,5)'
+background-transparency-percent=16
+cursor-shape='block'
+font='Nimbus Mono PS Bold 32'
+foreground-color='rgb(255,138,0)'
+palette=['rgb(40,40,35)', 'rgb(250,38,115)', 'rgb(166,226,45)', 'rgb(244,190,115)', 'rgb(255,105,0)', 'rgb(175,130,255)', 'rgb(160,240,230)', 'rgb(233,233,233)', 'rgb(115,115,95)', 'rgb(255,0,0)', 'rgb(166,226,45)', 'rgb(250,233,80)', 'rgb(255,105,0)', 'rgb(175,130,255)', 'rgb(50,226,226)', 'rgb(230,230,230)']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='RetroX'
