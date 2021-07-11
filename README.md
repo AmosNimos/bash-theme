@@ -1,8 +1,8 @@
 # config
 myconfig
 
-# How to 
-= Export Gnome Terminal Profile
+# Extract gnome terminal theme.
+> Export Gnome Terminal Profile
 https://gist.github.com/reavon/0bbe99150810baa5623e5f601aa93afc
 
 List profiles
