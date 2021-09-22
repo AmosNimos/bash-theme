@@ -1,0 +1,8 @@
+[:564a40aa-dd2c-4231-bb51-5e2edfdeda00]
+background-color='rgb(17,17,16)'
+font='Monospace Bold 24'
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(159,181,13)', 'rgb(181,137,0)', 'rgb(253,139,47)', 'rgb(255,168,0)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(255,75,0)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(236,119,26)', 'rgb(232,162,27)', 'rgb(147,161,161)', 'rgb(253,246,227)']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Factory'
