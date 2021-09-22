@@ -7,13 +7,13 @@ https://gist.github.com/reavon/0bbe99150810baa5623e5f601aa93afc
 
 List profiles
 
-....
+~~~
 dconf dump /org/gnome/terminal/legacy/profiles:/
-....
+~~~
 
 Determine the terminal profile string for the profile you will need. This is the terminal profile that I will export:
 
-....
+~~~
 [:1430663d-083b-4737-a7f5-8378cc8226d1]
 foreground-color='#C3C3C7C7D1D1'
 visible-name='Material Colors'
@@ -29,23 +29,23 @@ bold-color='#FFFFFFFFFFFF'
 background-color='#1E1E28282C2C'
 audible-bell=false
 scrollbar-policy='never'
-....
+~~~
 
 And the string that I will need to use to export is
 
-....
+~~~
 :1430663d-083b-4737-a7f5-8378cc8226d1
-....
+~~~
 
 The command to export that profile is (note the ending slash)
 
-....
+~~~
 dconf dump /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ > material-theme-profile.dconf
-....
+~~~
 
 To restore the profile
 
-....
+~~~
 dconf load /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ < material-theme-profile.dconf
-....
+~~~
 
