@@ -1,18 +1,15 @@
-# config
-myconfig
+# Terminal theme.
 
-# Extract gnome terminal theme.
 > Export Gnome Terminal Profile
-https://gist.github.com/reavon/0bbe99150810baa5623e5f601aa93afc
+[source](https://gist.github.com/reavon/0bbe99150810baa5623e5f601aa93afc)
 
-List profiles
-
+## Export theme
+- List profiles
 ~~~
 dconf dump /org/gnome/terminal/legacy/profiles:/
 ~~~
 
-Determine the terminal profile string for the profile you will need. This is the terminal profile that I will export:
-
+- Determine the terminal profile string for the profile you will need. This is the terminal profile that I will export:
 ~~~
 [:1430663d-083b-4737-a7f5-8378cc8226d1]
 foreground-color='#C3C3C7C7D1D1'
@@ -31,21 +28,21 @@ audible-bell=false
 scrollbar-policy='never'
 ~~~
 
-And the string that I will need to use to export is
+> In this case the string that will be needed to export this profile would be __:1430663d-083b-4737-a7f5-8378cc8226d1__
 
+- The command to export that profile is (note: don't forget the ending slash)
 ~~~
-:1430663d-083b-4737-a7f5-8378cc8226d1
-~~~
-
-The command to export that profile is (note the ending slash)
-
-~~~
-dconf dump /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ > material-theme-profile.dconf
+dconf dump /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ > theme-profile.dconf
 ~~~
 
-To restore the profile
+## Import theme
 
+- Replace the profile __:1430663d-083b-4737-a7f5-8378cc8226d1__ with theme-profile.
 ~~~
-dconf load /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ < material-theme-profile.dconf
+dconf load /org/gnome/terminal/legacy/profiles:/:1430663d-083b-4737-a7f5-8378cc8226d1/ < theme-profile.dconf
 ~~~
 
+___
+
+# Neofetch theme
+https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal
