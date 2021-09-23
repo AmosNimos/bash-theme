@@ -1,0 +1,9 @@
+[:8ba69061-142a-4fa1-84a2-2527ebb10959]
+background-color='rgb(36,20,38)'
+font='Monospace 20'
+foreground-color='rgb(255,154,142)'
+palette=['rgb(49,1,56)', 'rgb(218,218,218)', 'rgb(74,138,173)', 'rgb(255,154,142)', 'rgb(26,255,178)', 'rgb(167,89,147)', 'rgb(32,118,96)', 'rgb(153,17,111)', 'rgb(89,39,138)', 'rgb(218,218,218)', 'rgb(74,138,173)', 'rgb(255,154,142)', 'rgb(26,255,178)', 'rgb(157,133,163)', 'rgb(32,118,96)', 'rgb(153,17,111)']
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Sci_Fi'
