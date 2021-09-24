@@ -1,5 +1,4 @@
 # Terminal theme.
-
 > Export Gnome Terminal Profile
 [source](https://gist.github.com/reavon/0bbe99150810baa5623e5f601aa93afc)
 
@@ -46,3 +45,6 @@ ___
 
 # Neofetch theme
 https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal
+
+# XML file?
+These are theme for the Gedit text editor.
