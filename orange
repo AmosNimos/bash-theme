@@ -1,0 +1,7 @@
+[:b2104652-013f-4365-b50d-72c74cf0495d]
+background-color='rgb(18,18,18)'
+font='Nimbus Mono PS Bold 28'
+palette=['rgb(18,18,18)', 'rgb(255,0,0)', 'rgb(255,77,0)', 'rgb(255,92,0)', 'rgb(255,107,0)', 'rgb(255,122,0)', 'rgb(255,138,0)', 'rgb(255,153,0)', 'rgb(18,18,18)', 'rgb(255,0,0)', 'rgb(255,77,0)', 'rgb(255,92,0)', 'rgb(255,107,0)', 'rgb(255,122,0)', 'rgb(255,138,0)', 'rgb(255,153,0)']
+use-system-font=false
+use-theme-colors=false
+visible-name='orange'
